@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글로벌 모닝 브리프 — 2026-07-02 (목)</title>
+<style>
+  :root{
+    --bg:#0E1116; --card:#161B22; --card2:#1B222C; --line:#242C37;
+    --text:#E6EDF3; --sub:#8B949E; --accent:#D4A94E;
+    --up:#F87171; --down:#60A5FA; --flat:#9CA3AF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+    line-height:1.6; padding:20px 14px 40px;
+  }
+  .wrap{max-width:860px; margin:0 auto;}
+  header{border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:26px;}
+  header h1{font-size:26px; letter-spacing:-0.5px;}
+  header h1 .dot{color:var(--accent);}
+  header .meta{color:var(--sub); font-size:13px; margin-top:6px;}
+  section{margin-bottom:34px;}
+  h2{
+    font-size:15px; color:var(--accent); text-transform:none;
+    letter-spacing:0.3px; margin-bottom:12px; display:flex; align-items:center; gap:8px;
+  }
+  h2::after{content:""; flex:1; height:1px; background:var(--line);}
+  .card{
+    background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:14px 16px;
+  }
+  /* 헤드라인 */
+  .headline li{
+    list-style:none; padding:10px 0 10px 14px; border-left:3px solid var(--accent);
+    margin-bottom:10px; background:var(--card); border-radius:0 8px 8px 0;
+    font-size:15px;
+  }
+  /* 뉴스 카드 */
+  .news{display:grid; gap:12px;}
+  .news .card h3{font-size:15px; margin-bottom:6px;}
+  .news .card p{font-size:13.5px; color:var(--text); margin-bottom:8px;}
+  .why{font-size:13px; color:#C9B37E; margin-bottom:6px;}
+  .why b{color:var(--accent); font-weight:600;}
+  .src{font-size:12px; color:var(--sub);}
+  /* 지수/그리드 */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px;}
+  .idx .name{font-size:13px; color:var(--sub);}
+  .idx .val{font-size:20px; font-weight:700; margin:2px 0;}
+  .idx .chg{font-size:13px; font-weight:600;}
+  .up{color:var(--up);} .down{color:var(--down);} .flat{color:var(--flat);}
+  .note{font-size:12px; color:var(--sub); margin-top:8px;}
+  .stockgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:8px; margin-top:12px;}
+  .stock{background:var(--card2); border:1px solid var(--line); border-radius:8px; padding:10px 12px;}
+  .stock .t{font-size:13.5px; font-weight:600;}
+  .stock .c{font-size:12.5px; margin:2px 0;}
+  .stock .i{font-size:12px; color:var(--sub);}
+  .comment{margin-top:12px; font-size:13.5px; color:var(--text);}
+  .comment .lbl{color:var(--accent); font-weight:600;}
+  /* 매크로 */
+  .macro .name{font-size:12.5px; color:var(--sub);}
+  .macro .val{font-size:17px; font-weight:700; margin:2px 0;}
+  .macro .sub{font-size:12px;}
+  /* 지켜볼 것 */
+  .watch li{
+    list-style:none; padding:10px 14px; margin-bottom:8px;
+    background:var(--card); border:1px solid var(--line); border-radius:8px; font-size:13.5px;
+  }
+  .watch .when{color:var(--accent); font-weight:600; margin-right:6px; font-size:12.5px;}
+  footer{
+    border-top:1px solid var(--line); margin-top:10px; padding-top:14px;
+    font-size:12px; color:var(--sub);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>글로벌 모닝 브리프<span class="dot">.</span></h1>
+  <div class="meta">2026-07-02 (목) · 오전 5:00 KST 발행 · 국제 정세 &amp; 미국 시장 데일리</div>
+</header>
+
+<!-- ① 오늘의 헤드라인 -->
+<section>
+  <h2>① 오늘의 헤드라인</h2>
+  <ul class="headline">
+    <li>미국·이란 도하 간접협상이 "긍정적 진전" — 호르무즈 리스크 완화 기대에 국제유가 급락, WTI 69달러선.</li>
+    <li>뉴욕증시 3분기 첫날 소폭 하락 마감 — 다우는 장중 사상 최고치 경신 후 보합, 반도체주 차익실현에 나스닥 -0.66%.</li>
+    <li>오늘 밤 21:30(KST) 미 6월 고용보고서 발표 — ADP 민간고용 부진(+9.8만) 이후 연준 금리 경로의 최대 분수령.</li>
+  </ul>
+</section>
+
+<!-- ② 국제 정세 뉴스 -->
+<section>
+  <h2>② 국제 정세 뉴스</h2>
+  <div class="news">
+
+    <div class="card">
+      <h3>미·이란 도하 협상 "긍정적 진전" — 동결자금 30억 달러 첫 해제 가닥</h3>
+      <p>카타르·파키스탄 중재로 재개된 미·이란 간접 기술협상에서 양측이 이슬라마바드 MOU 관련 쟁점에 "긍정적 진전"을 이뤘다고 카타르가 밝혔다. 카타르에 동결된 이란 자금 중 1차분 30억 달러를 인도적 물자 구매 용도로 푸는 방안에 공감대가 형성됐고, 핵심 쟁점은 호르무즈 해협 통행료·관리권 문제다.</p>
+      <div class="why"><b>왜 중요한가</b> — 세계 원유 물동량의 요충지 호르무즈 긴장 완화 여부가 유가·물가·금리 경로를 직접 좌우한다.</div>
+      <div class="src">출처: CNN, Axios, Al Jazeera, CBS News</div>
+    </div>
+
+    <div class="card">
+      <h3>워시 연준 의장, 신트라 ECB 포럼서 "물가 여전히 너무 높다"</h3>
+      <p>케빈 워시 연준 의장이 포르투갈 신트라 ECB 포럼에서 "AI발 생산성·디플레 효과에 열린 자세지만, 둘러보면 물가가 너무 높다"며 7월 금리 결정에 대한 힌트를 거부했다. 6월 FOMC에서 연준은 금리를 동결한 바 있다.</p>
+      <div class="why"><b>왜 중요한가</b> — 신임 의장의 매파적 톤은 연내 인하 기대를 후퇴시켜 채권금리·달러·성장주 밸류에이션에 부담이 된다.</div>
+      <div class="src">출처: CNBC, PBS News</div>
+    </div>
+
+    <div class="card">
+      <h3>트럼프, EU에 "7월 4일까지 무역합의 이행" 최후통첩</h3>
+      <p>트럼프 대통령이 지난해 스코틀랜드 턴베리에서 타결한 미·EU 무역합의의 이행 시한을 7월 4일로 못박고, 불이행 시 자동차 등 관세를 "즉시 훨씬 높은 수준"으로 올리겠다고 경고했다. 폰데어라이엔 EU 집행위원장은 "7월 초 관세 인하를 향해 좋은 진전이 있다"며 이행 의지를 재확인했다.</p>
+      <div class="why"><b>왜 중요한가</b> — 시한이 이번 주말로 임박해 결렬 시 글로벌 통상 충격과 유럽·자동차 업종 변동성이 커진다.</div>
+      <div class="src">출처: Bloomberg, Euronews, Al Jazeera</div>
+    </div>
+
+    <div class="card">
+      <h3>우크라이나, 크림 사키 공군기지 드론 타격 — 스웨덴 그리펜 16대 도입</h3>
+      <p>우크라이나 보안국(SBU) 드론이 크림반도 사키 기지의 러시아 전투기 격납고를 타격했고, 러시아 펜자주의 군수·항공우주 기업도 공격했다. 젤렌스키 대통령은 스웨덴산 그리펜 E 전투기 16대 구매 계약을 발표했다. 한편 러시아는 6월 한 달간 우크라이나 영토 약 31평방마일을 추가 점령하며 압박을 이어갔다.</p>
+      <div class="why"><b>왜 중요한가</b> — 장거리 타격전 확대와 서방 무기 도입 가속은 휴전 협상 구도와 유럽 방산·에너지 시장에 직결된다.</div>
+      <div class="src">출처: Kyiv Independent, Russia Matters, Ukrinform</div>
+    </div>
+
+    <div class="card">
+      <h3>이스라엘, '아르메니아 제노사이드' 인정 추진 — 튀르키예와 갈등 격화</h3>
+      <p>이스라엘 내각이 오스만 제국의 아르메니아인 학살을 제노사이드로 규정하는 안을 승인했다. 이는 악화 일로인 이스라엘-튀르키예 관계를 반영한 조치로 풀이된다. 네타냐후 총리는 남부 레바논 주둔 병력을 방문해 점령 지속 방침을 밝혔다.</p>
+      <div class="why"><b>왜 중요한가</b> — 역내 두 군사 강국의 정면충돌 구도는 중동 안보 지형과 에너지 수송로 리스크를 한층 키운다.</div>
+      <div class="src">출처: Democracy Now!</div>
+    </div>
+
+    <div class="card">
+      <h3>미 6월 ADP 민간고용 +9.8만 명, 예상 하회 — 노동시장 둔화 시그널</h3>
+      <p>6월 ADP 민간 고용이 9만 8천 명 증가에 그쳐 시장 예상을 밑돌았다. 오늘 밤 발표되는 정부 공식 고용보고서(비농업 고용)의 컨센서스는 +10만~11.5만 명, 실업률 4.3%다.</p>
+      <div class="why"><b>왜 중요한가</b> — 고용 둔화가 확인되면 "물가가 너무 높다"는 연준과 시장의 인하 기대 사이 긴장이 커진다.</div>
+      <div class="src">출처: CNBC, FactSet, Kiplinger</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ③ 미국 증시 -->
+<section>
+  <h2>③ 미국 증시 <span style="color:var(--sub);font-weight:400;font-size:12px;">(7/1 마감 기준)</span></h2>
+  <div class="grid">
+    <div class="card idx">
+      <div class="name">S&amp;P 500</div>
+      <div class="val">7,483.23</div>
+      <div class="chg down">▼ -0.22%</div>
+    </div>
+    <div class="card idx">
+      <div class="name">나스닥 종합</div>
+      <div class="val">26,040.03</div>
+      <div class="chg down">▼ -0.66%</div>
+    </div>
+    <div class="card idx">
+      <div class="name">다우존스</div>
+      <div class="val">52,305.24</div>
+      <div class="chg down">▼ -0.03% <span style="color:var(--sub);font-weight:400;">(장중 사상 최고 경신)</span></div>
+    </div>
+  </div>
+
+  <div class="stockgrid">
+    <div class="stock"><div class="t">엔비디아 NVDA</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">반도체 차익실현 매물 부담 · 마이클 버리, 공매도 포지션 공개</div></div>
+    <div class="stock"><div class="t">애플 AAPL</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">FY26 매출 +9% 전망(2021년 이후 최고 성장률)</div></div>
+    <div class="stock"><div class="t">마이크로소프트 MSFT</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">특이 이슈 미확인</div></div>
+    <div class="stock"><div class="t">알파벳 GOOGL</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">올해 매그니피센트7 중 상대 강세 지속</div></div>
+    <div class="stock"><div class="t">아마존 AMZN</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">특이 이슈 미확인</div></div>
+    <div class="stock"><div class="t">메타 META</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">특이 이슈 미확인</div></div>
+    <div class="stock"><div class="t">테슬라 TSLA</div><div class="c flat">당일 등락률 확인 불가</div><div class="i">마이클 버리, 공매도 포지션 공개</div></div>
+  </div>
+
+  <div class="stockgrid">
+    <div class="stock"><div class="t">특징주 · 마이크론 MU</div><div class="c down">▼ 약 -10.6%</div><div class="i">상반기 급등 후 차익실현 + 메모리 공급과잉 우려로 급락</div></div>
+    <div class="stock"><div class="t">특징주 · 네비우스 NBIS</div><div class="c down">▼ 약 -17.0%</div><div class="i">AI 인프라주 투매 — 반도체 조정의 직격탄</div></div>
+  </div>
+
+  <p class="comment"><span class="lbl">시장 코멘트</span> — 2020년 이후 최고의 분기를 마친 직후인 3분기 첫 거래일, 상반기 80% 넘게 급등했던 반도체주에 차익실현 매물이 쏟아지며 나스닥이 지수 하락을 주도했다. 다우는 장중 사상 최고치를 새로 쓴 뒤 강보합권에서 마감해 순환매 흐름이 뚜렷했다. ADP 고용 부진과 워시 의장의 매파적 발언 속에 시장의 시선은 오늘 밤 고용보고서로 이동하고 있다.</p>
+</section>
+
+<!-- ④ 원자재·환율·금리 -->
+<section>
+  <h2>④ 원자재 · 환율 · 금리 스냅샷</h2>
+  <div class="grid">
+    <div class="card macro">
+      <div class="name">WTI 유가</div>
+      <div class="val">약 $69/배럴</div>
+      <div class="sub down">▼ 하락 — 미·이란 협상 진전</div>
+    </div>
+    <div class="card macro">
+      <div class="name">브렌트 유가</div>
+      <div class="val">$72.25/배럴</div>
+      <div class="sub down">▼ -0.96%</div>
+    </div>
+    <div class="card macro">
+      <div class="name">원/달러 환율</div>
+      <div class="val">약 1,550원대</div>
+      <div class="sub up">▲ 원화 약세 — 장중 1,558원, 2009년 3월 이후 최저 수준 부근</div>
+    </div>
+    <div class="card macro">
+      <div class="name">미 10년물 국채금리</div>
+      <div class="val">4.4%대 중반</div>
+      <div class="sub flat">6/30 4.44% → 7/2 새벽 4.48% 부근</div>
+    </div>
+    <div class="card macro">
+      <div class="name">금 (온스당)</div>
+      <div class="val">$4,090</div>
+      <div class="sub up">▲ +2% — 저점 반등</div>
+    </div>
+    <div class="card macro">
+      <div class="name">달러 인덱스</div>
+      <div class="val">확인 불가</div>
+      <div class="sub flat">검색 시점 데이터 미확인</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 오늘 지켜볼 것 -->
+<section>
+  <h2>⑤ 오늘 지켜볼 것</h2>
+  <ul class="watch">
+    <li><span class="when">오늘 21:30 KST</span>미국 6월 고용보고서 — 비농업 고용 컨센서스 +10만~11.5만 명, 실업률 4.3%, 시간당 임금 +0.3%(MoM). 독립기념일 연휴로 목요일 발표. 주간 신규 실업수당 청구도 동시 발표.</li>
+    <li><span class="when">7/3 (금)</span>미국 증시 휴장 — 독립기념일(7/4 토요일) 대체 휴일. 이번 주 미국 거래는 사실상 오늘 밤이 마지막.</li>
+    <li><span class="when">7/4 (토)</span>트럼프의 대(對)EU 무역합의 이행 시한 — 불발 시 자동차 등 관세 대폭 인상 예고.</li>
+    <li><span class="when">진행 중</span>도하 미·이란 간접협상 계속 — 호르무즈 통행료·동결자산 후속 합의 여부에 따라 유가 변동성 확대 가능.</li>
+  </ul>
+</section>
+
+<footer>
+  본 보고서는 AI가 자동 생성한 요약이며 투자 판단의 근거로 사용할 수 없습니다. 수치는 검색 시점 기준입니다.<br>
+  주요 참고: CNBC · TheStreet · Yahoo Finance · Bloomberg · CNN · Axios · Al Jazeera · Kyiv Independent · Trading Economics · FactSet
+</footer>
+
+</div>
+</body>
+</html>

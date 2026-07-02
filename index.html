@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>글로벌 모닝 브리프</title>
+<meta name="description" content="매일 아침 5시, 국제 정세와 미국 증시를 요약하는 자동 브리핑">
+<style>
+  :root { --bg:#0E1116; --card:#161B22; --fg:#E6EDF3; --muted:#8B949E; --accent:#4F8CFF; --line:#21262D; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI","Malgun Gothic",sans-serif; line-height:1.6; }
+  .wrap { max-width:720px; margin:0 auto; padding:40px 20px 60px; }
+  h1 { font-size:1.9rem; letter-spacing:-0.5px; }
+  .sub { color:var(--muted); margin:6px 0 28px; font-size:0.95rem; }
+  .latest { display:block; background:linear-gradient(135deg,#1a2233,#161B22); border:1px solid var(--accent);
+            border-radius:14px; padding:22px 24px; text-decoration:none; color:var(--fg); margin-bottom:36px; }
+  .latest:hover { background:#1c2536; }
+  .latest .tag { color:var(--accent); font-size:0.8rem; font-weight:700; letter-spacing:1px; }
+  .latest .date { font-size:1.35rem; font-weight:700; margin-top:4px; }
+  .latest .go { color:var(--muted); font-size:0.9rem; margin-top:6px; }
+  h2 { font-size:1.05rem; color:var(--muted); font-weight:600; margin-bottom:12px; }
+  ul.archive { list-style:none; }
+  ul.archive li { border-bottom:1px solid var(--line); }
+  ul.archive a { display:block; padding:13px 6px; color:var(--fg); text-decoration:none; }
+  ul.archive a:hover { color:var(--accent); }
+  footer { margin-top:44px; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--line); padding-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>글로벌 모닝 브리프</h1>
+  <p class="sub">매일 아침 5시(KST) · 국제 정세에 영향을 미치는 뉴스와 미국 증시를 한 페이지로</p>
+
+  <a class="latest" href="briefs/brief-2026-07-02.html">
+    <div class="tag">LATEST</div>
+    <div class="date">2026-07-02 (목)</div>
+    <div class="go">오늘의 브리핑 보기 →</div>
+  </a>
+
+  <h2>지난 브리핑</h2>
+  <ul class="archive">
+    <li><a href="briefs/brief-2026-07-02.html">2026-07-02 (목)</a></li>
+  </ul>
+
+  <footer>
+    본 사이트의 모든 브리핑은 AI가 자동 생성한 요약이며 투자 판단의 근거로 사용할 수 없습니다.<br>
+    마지막 업데이트: 2026-07-02 14:27 KST
+  </footer>
+</div>
+</body>
+</html>
