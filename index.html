@@ -45,29 +45,27 @@
 
   <h2>지난 브리핑</h2>
   <ul class="archive">
-    <li><a href="briefs/brief-2026-07-03-1200.html">2026-07-03 (금) 12:00</a> <a class="yt" href="https://youtu.be/HptaYb6SbAU">&#9654; Shorts</a></li>
+    <li><a href="briefs/brief-2026-07-03-1200.html">2026-07-03 (금) 12:00</a> <a class="yt" href="https://youtu.be/ELz7N7u9Zk8">&#9654; Shorts</a></li>
     <li><a href="briefs/brief-2026-07-03.html">2026-07-03 (금) 05:00</a> <a class="yt" href="https://youtu.be/ZYSgIBTV8eQ">&#9654; Shorts</a></li>
     <li><a href="briefs/brief-2026-07-02.html">2026-07-02 (목) 05:00</a> <a class="yt" href="https://youtu.be/e3l4DeGl_2A">&#9654; Shorts</a></li>
   </ul>
 
   <footer>
     본 사이트의 모든 브리핑은 AI가 자동 생성한 요약이며 투자 판단의 근거로 사용할 수 없습니다.<br>
-    마지막 업데이트: 2026-07-03 07:02 KST
+    마지막 업데이트: 2026-07-03 12:07 KST
   </footer>
 </div>
 <!-- gc-v2 -->
 <script data-goatcounter="https://sylee0215.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
 (function(){
-  var total = location.pathname === '/' || location.pathname === '/index.html';
-  var path = total ? 'TOTAL' : location.pathname;
-  fetch('https://sylee0215.goatcounter.com/counter/' + path + '.json')
+  fetch('https://sylee0215.goatcounter.com/counter/TOTAL.json')
     .then(function(r){ return r.ok ? r.json() : null })
     .then(function(d){
       if (!d || !d.count) return;
       var el = document.createElement('div');
-      el.style.cssText = 'max-width:860px;margin:14px auto 28px;padding:0 16px;text-align:center;color:#8B949E;font-size:0.8rem;font-family:-apple-system,"Segoe UI","Malgun Gothic",sans-serif;';
-      el.textContent = (total ? '전체 방문 ' : '이 브리핑 조회 ') + d.count.trim() + '회';
+      el.style.cssText = 'max-width:720px;margin:14px auto 28px;padding:0 20px;text-align:center;color:#8B949E;font-size:0.8rem;';
+      el.textContent = '전체 방문 ' + d.count.trim() + '회';
       document.body.appendChild(el);
     })
     .catch(function(){});
