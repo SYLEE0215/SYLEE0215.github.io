@@ -3,74 +3,115 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>글로벌 브리프</title>
-<meta name="description" content="매일 05시·12시·18시, 국제 정세와 글로벌 증시를 요약하는 자동 브리핑">
+<title>데일리 브리프 — 글로벌 정세·시황 & 종목분석</title>
+<meta name="description" content="AI가 매일 자동 발행하는 글로벌 정세·시황 브리핑과 코스피·코스닥·나스닥 랜덤 종목 심층 분석">
 <style>
-  :root { --bg:#0E1116; --card:#161B22; --fg:#E6EDF3; --muted:#8B949E; --accent:#4F8CFF; --line:#21262D; }
+  :root { --bg:#0E1116; --card:#161B22; --fg:#E6EDF3; --muted:#8B949E; --accent:#4F8CFF; --green:#34D399; --violet:#A78BFA; --line:#21262D; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI","Malgun Gothic",sans-serif; line-height:1.6; }
-  .wrap { max-width:720px; margin:0 auto; padding:40px 20px 60px; }
+  body { background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI","Malgun Gothic",sans-serif; line-height:1.65; }
+  .layout { display:flex; gap:40px; max-width:1060px; margin:0 auto; padding:40px 20px 60px; }
+  aside { width:210px; flex-shrink:0; position:sticky; top:40px; align-self:flex-start; }
+  aside .brand { font-size:1.05rem; font-weight:800; letter-spacing:-0.3px; padding:0 14px 14px; }
+  aside .brand a { color:var(--fg); text-decoration:none; }
+  .sect { font-size:0.7rem; color:#565D66; letter-spacing:1.6px; font-weight:700; margin:16px 0 4px; padding-left:14px; }
+  .snav a { display:block; padding:8px 14px; border-radius:10px; color:var(--muted); text-decoration:none; font-size:0.93rem; font-weight:600; }
+  .snav a:hover { color:var(--fg); background:var(--card); }
+  .snav a.on { color:var(--accent); background:rgba(79,140,255,0.09); }
+  .snav a.sub2 { padding-left:28px; font-size:0.87rem; font-weight:500; }
+  .snav a.yt { color:#F87171; }
+  main { flex:1; min-width:0; }
   h1 { font-size:1.9rem; letter-spacing:-0.5px; }
-  .sub { color:var(--muted); margin:6px 0 10px; font-size:0.95rem; }
-  .channel { margin:0 0 28px; font-size:0.9rem; }
-  .channel a { color:#F87171; text-decoration:none; font-weight:600; }
-  .channel a:hover { text-decoration:underline; }
-  .latest { display:block; background:linear-gradient(135deg,#1a2233,#161B22); border:1px solid var(--accent);
-            border-radius:14px; padding:22px 24px; text-decoration:none; color:var(--fg); margin-bottom:36px; }
-  .latest:hover { background:#1c2536; }
-  .latest .tag { color:var(--accent); font-size:0.8rem; font-weight:700; letter-spacing:1px; }
-  .latest .date { font-size:1.35rem; font-weight:700; margin-top:4px; }
-  .latest .go { color:var(--muted); font-size:0.9rem; margin-top:6px; }
-  h2 { font-size:1.05rem; color:var(--muted); font-weight:600; margin-bottom:12px; }
-  nav.cats { display:flex; gap:8px; margin:0 0 26px; }
-  nav.cats a { padding:7px 16px; border-radius:999px; border:1px solid var(--line); color:var(--muted);
-               text-decoration:none; font-size:0.9rem; font-weight:600; }
-  nav.cats a:hover { color:var(--fg); border-color:var(--muted); }
-  nav.cats a.on { color:var(--accent); border-color:var(--accent); background:rgba(79,140,255,0.08); }
-  ul.archive { list-style:none; }
-  ul.archive li { border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
-  ul.archive a { display:block; padding:13px 6px; color:var(--fg); text-decoration:none; }
-  ul.archive a:hover { color:var(--accent); }
-  ul.archive a.yt { color:#F87171; font-size:0.85rem; flex-shrink:0; }
-  ul.archive a.yt:hover { color:#fca5a5; }
-  footer { margin-top:44px; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--line); padding-top:16px; }
+  .sub { color:var(--muted); margin:8px 0 30px; font-size:0.97rem; }
+  .cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:26px; }
+  .cat { display:block; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px;
+         text-decoration:none; color:var(--fg); }
+  .cat:hover { border-color:var(--ac); }
+  .cat .tag { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:1px; color:var(--ac);
+              border:1px solid var(--ac); border-radius:999px; padding:2px 10px; margin-bottom:10px; }
+  .cat h3 { font-size:1.15rem; margin-bottom:6px; }
+  .cat p { color:var(--muted); font-size:0.88rem; }
+  .cat .go { color:var(--ac); font-size:0.85rem; margin-top:10px; font-weight:600; }
+  .info { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin-bottom:14px; }
+  .info h2 { font-size:1.02rem; margin-bottom:10px; }
+  .info ul { list-style:none; }
+  .info li { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid var(--line); font-size:0.92rem; }
+  .info li:last-child { border-bottom:0; }
+  .info .t { color:var(--accent); font-weight:700; flex-shrink:0; width:118px; font-variant-numeric:tabular-nums; }
+  .info .d { color:var(--muted); }
+  footer { margin-top:36px; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--line); padding-top:16px; }
+  @media (max-width:860px) {
+    .layout { flex-direction:column; gap:18px; }
+    aside { position:static; width:100%; }
+    aside .brand { padding-bottom:8px; }
+    .sect { display:none; }
+    .snav { display:flex; flex-wrap:wrap; gap:6px; }
+    .snav a, .snav a.sub2 { padding:7px 14px; border:1px solid var(--line); border-radius:999px; font-size:0.85rem; }
+    .cards { grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>글로벌 브리프</h1>
-  <p class="sub">매일 05시 · 12시 · 18시(KST) — 밤사이 뉴스와 미국 증시, 오전·오후 정세와 아시아·유럽 증시를 한 페이지로</p>
-  <p class="channel">&#9654; 60초 쇼츠로 보기 — YouTube <a href="https://www.youtube.com/@dailytopicskorea">@dailytopicskorea</a></p>
+<div class="layout">
+  <aside>
+    <div class="brand"><a href="./">데일리 브리프</a></div>
+    <nav class="snav">
+      <div class="sect">MENU</div>
+      <a class="on" href="./">홈</a>
+      <a href="briefs/">글로벌 정세 · 시황</a>
+      <a href="stocks/">종목분석</a>
+      <div class="sect">종목분석 카테고리</div>
+      <a class="sub2" href="stocks/kospi/">코스피</a>
+      <a class="sub2" href="stocks/kosdaq/">코스닥</a>
+      <a class="sub2" href="stocks/nasdaq/">나스닥</a>
+      <div class="sect">CHANNEL</div>
+      <a class="yt" href="https://www.youtube.com/@dailytopicskorea">&#9654; YouTube 쇼츠</a>
+    </nav>
+  </aside>
+  <main>
+    <h1>데일리 브리프</h1>
+    <p class="sub">AI가 사람의 개입 없이 매일 자동으로 수집·분석·발행하는 글로벌 정세 브리핑과 종목 심층 분석 아카이브입니다.
+    모든 글은 발행 시각 기준의 공개 데이터를 바탕으로 작성됩니다.</p>
 
-  <nav class="cats">
-    <a class="on" href="./">글로벌 정세 · 시황</a>
-    <a href="stocks/">종목분석</a>
-  </nav>
+    <div class="cards">
+      <a class="cat" href="briefs/" style="--ac:var(--accent)">
+        <span class="tag">DAILY ×3</span>
+        <h3>글로벌 정세 · 시황</h3>
+        <p>밤사이 국제 뉴스와 미국 증시, 오전·오후 정세와 아시아·유럽 증시를 한 페이지로 요약하는 브리핑. 매일 3회 발행됩니다.</p>
+        <div class="go">브리핑 보러 가기 →</div>
+      </a>
+      <a class="cat" href="stocks/" style="--ac:var(--green)">
+        <span class="tag">DAILY ×3종목</span>
+        <h3>종목분석</h3>
+        <p>코스피 · 코스닥 · 나스닥에서 매일 1종목씩 무작위 추첨해 기업 가치와 투자 적합도를 차트와 함께 진단하는 리포트입니다.</p>
+        <div class="go">리포트 보러 가기 →</div>
+      </a>
+    </div>
 
-  <a class="latest" href="briefs/brief-2026-07-06.html">
-    <div class="tag">LATEST</div>
-    <div class="date">2026-07-06 (월) 05:00</div>
-    <div class="go">오늘의 브리핑 보기 →</div>
-  </a>
+    <div class="info">
+      <h2>발행 스케줄 (KST)</h2>
+      <ul>
+        <li><span class="t">매일 05:00</span><span class="d">새벽 브리핑 — 밤사이 국제 뉴스 + 미국 증시 마감</span></li>
+        <li><span class="t">매일 08:00</span><span class="d">종목분석 — 코스피·코스닥·나스닥 랜덤 각 1종목 심층 리포트</span></li>
+        <li><span class="t">매일 12:00</span><span class="d">정오 브리핑 — 오전 정세 + 아시아 증시</span></li>
+        <li><span class="t">매일 18:00</span><span class="d">저녁 브리핑 — 오후 정세 + 아시아 마감 · 유럽 개장</span></li>
+      </ul>
+    </div>
 
-  <h2>지난 브리핑</h2>
-  <ul class="archive">
-    <li><a href="briefs/brief-2026-07-06.html">2026-07-06 (월) 05:00</a> <a class="yt" href="https://youtu.be/7veobvlAlRQ">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-05-1800.html">2026-07-05 (일) 18:00</a> <a class="yt" href="https://youtu.be/KtAm6blWql0">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-05-1200.html">2026-07-05 (일) 12:00</a> <a class="yt" href="https://youtu.be/0uFnz9SGwgQ">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-05.html">2026-07-05 (일) 05:00</a> <a class="yt" href="https://youtu.be/A-NwBQz4HnM">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-04-1200.html">2026-07-04 (토) 12:00</a> <a class="yt" href="https://youtu.be/4eDJmfMIUIw">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-04.html">2026-07-04 (토) 05:00</a> <a class="yt" href="https://youtu.be/NqutRk6_lug">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-03-1800.html">2026-07-03 (금) 18:00</a> <a class="yt" href="https://youtu.be/DmrOVKbDilY">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-03-1200.html">2026-07-03 (금) 12:00</a> <a class="yt" href="https://youtu.be/ELz7N7u9Zk8">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-03.html">2026-07-03 (금) 05:00</a> <a class="yt" href="https://youtu.be/ZYSgIBTV8eQ">&#9654; Shorts</a></li>
-    <li><a href="briefs/brief-2026-07-02.html">2026-07-02 (목) 05:00</a> <a class="yt" href="https://youtu.be/e3l4DeGl_2A">&#9654; Shorts</a></li>
-  </ul>
+    <div class="info">
+      <h2>이 사이트에 대해</h2>
+      <p style="color:var(--muted);font-size:0.92rem">
+        데이터 수집부터 분석, 글 작성, 발행까지 전 과정이 자동화 파이프라인으로 운영됩니다.
+        브리핑은 주요 외신·시장 데이터를 교차 확인해 작성되며, 종목분석은 거래소 공시 데이터와 증권 정보 API를 기반으로
+        밸류에이션 · 수익성 · 성장성 · 재무안정성 · 주주환원 5개 축을 점수화합니다.
+        주요 소식은 <a href="https://www.youtube.com/@dailytopicskorea" style="color:#F87171">YouTube 쇼츠</a>로도 발행됩니다.
+      </p>
+    </div>
 
-  <footer>
-    본 사이트의 모든 브리핑은 AI가 자동 생성한 요약이며 투자 판단의 근거로 사용할 수 없습니다.<br>
-    마지막 업데이트: 2026-07-06 05:05 KST
-  </footer>
+    <footer>
+      본 사이트의 모든 콘텐츠는 AI가 자동 생성한 정보 제공 목적의 자료이며, 특정 종목의 매수·매도 추천이 아니고
+      투자 판단의 근거로 사용할 수 없습니다.
+    </footer>
+  </main>
 </div>
 <!-- gc-v2 -->
 <script data-goatcounter="https://sylee0215.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -81,7 +122,7 @@
     .then(function(d){
       if (!d || !d.count) return;
       var el = document.createElement('div');
-      el.style.cssText = 'max-width:720px;margin:14px auto 28px;padding:0 20px;text-align:center;color:#8B949E;font-size:0.8rem;';
+      el.style.cssText = 'max-width:1060px;margin:0 auto 28px;padding:0 20px;text-align:center;color:#8B949E;font-size:0.8rem;';
       el.textContent = '전체 방문 ' + d.count.trim() + '회';
       document.body.appendChild(el);
     })
