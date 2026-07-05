@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>종목분석 — 코스닥</title>
+<meta name="description" content="KOSDAQ 종목 랜덤 심층 분석 아카이브">
+<style>
+  :root { --bg:#0E1116; --card:#161B22; --fg:#E6EDF3; --muted:#8B949E; --accent:#4F8CFF; --line:#21262D; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI","Malgun Gothic",sans-serif; line-height:1.6; }
+  .wrap { max-width:720px; margin:0 auto; padding:40px 20px 60px; }
+  h1 { font-size:1.9rem; letter-spacing:-0.5px; }
+  .sub { color:var(--muted); margin:6px 0 26px; font-size:0.95rem; }
+  nav.cats { display:flex; gap:8px; margin:0 0 26px; flex-wrap:wrap; }
+  nav.cats a { padding:7px 16px; border-radius:999px; border:1px solid var(--line); color:var(--muted);
+               text-decoration:none; font-size:0.9rem; font-weight:600; }
+  nav.cats a:hover { color:var(--fg); border-color:var(--muted); }
+  nav.cats a.on { color:var(--accent); border-color:var(--accent); background:rgba(79,140,255,0.08); }
+  h2 { font-size:1.05rem; color:var(--muted); font-weight:600; margin:30px 0 12px; }
+  .card { display:block; background:var(--card); border:1px solid var(--line); border-radius:14px;
+          padding:18px 20px; text-decoration:none; color:var(--fg); margin-bottom:12px; }
+  .card:hover { border-color:var(--accent); }
+  .badge { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:1px;
+           border:1px solid; border-radius:999px; padding:2px 10px; margin-bottom:8px; }
+  .card .nm { font-size:1.15rem; font-weight:700; }
+  .card .nm small { color:var(--muted); font-weight:500; margin-left:6px; }
+  .card .vd { color:var(--muted); font-size:0.88rem; margin-top:4px; }
+  ul.archive { list-style:none; }
+  ul.archive li { border-bottom:1px solid var(--line); }
+  ul.archive a { display:flex; justify-content:space-between; gap:12px; padding:13px 6px; color:var(--fg); text-decoration:none; }
+  ul.archive a:hover { color:var(--accent); }
+  ul.archive .d { color:var(--muted); font-size:0.85rem; flex-shrink:0; }
+  footer { margin-top:44px; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--line); padding-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>종목분석 — 코스닥</h1>
+  <p class="sub">KOSDAQ 종목 랜덤 심층 분석 아카이브</p>
+  <nav class="cats"><a href="../../">글로벌 정세 · 시황</a><a href="../../stocks/">종목분석</a><a href="../../stocks/kospi/">코스피</a><a class="on" href="../../stocks/kosdaq/">코스닥</a><a href="../../stocks/nasdaq/">나스닥</a></nav>
+<ul class="archive" style="margin-top:0">
+  <li><a href="2026-07-06-060720-kh-vatec.html"><span>KH바텍 <small style="color:var(--muted)">060720</small> — 종합 68점 · 관심 (낙폭과대 실적주)</span><span class="d">2026-07-06</span></a></li>
+</ul>
+  <footer>
+    본 사이트의 모든 보고서는 공개 데이터를 AI가 자동 수집·분석한 정보 제공 목적의 자료이며,
+    특정 종목의 매수·매도 추천이 아니고 투자 판단의 근거로 사용할 수 없습니다.<br>
+    마지막 업데이트: 2026-07-06 07:38 KST
+  </footer>
+</div>
+<!-- gc-v2 -->
+<script data-goatcounter="https://sylee0215.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function(){
+  var total = location.pathname === '/' || location.pathname === '/index.html';
+  var path = total ? 'TOTAL' : location.pathname;
+  fetch('https://sylee0215.goatcounter.com/counter/' + path + '.json')
+    .then(function(r){ return r.ok ? r.json() : null })
+    .then(function(d){
+      if (!d || !d.count) return;
+      var el = document.createElement('div');
+      el.style.cssText = 'max-width:860px;margin:14px auto 28px;padding:0 16px;text-align:center;color:#8B949E;font-size:0.8rem;font-family:-apple-system,"Segoe UI","Malgun Gothic",sans-serif;';
+      el.textContent = (total ? '전체 방문 ' : '이 브리핑 조회 ') + d.count.trim() + '회';
+      document.body.appendChild(el);
+    })
+    .catch(function(){});
+})();
+</script>
+</body>
+</html>

@@ -22,6 +22,11 @@
   .latest .date { font-size:1.35rem; font-weight:700; margin-top:4px; }
   .latest .go { color:var(--muted); font-size:0.9rem; margin-top:6px; }
   h2 { font-size:1.05rem; color:var(--muted); font-weight:600; margin-bottom:12px; }
+  nav.cats { display:flex; gap:8px; margin:0 0 26px; }
+  nav.cats a { padding:7px 16px; border-radius:999px; border:1px solid var(--line); color:var(--muted);
+               text-decoration:none; font-size:0.9rem; font-weight:600; }
+  nav.cats a:hover { color:var(--fg); border-color:var(--muted); }
+  nav.cats a.on { color:var(--accent); border-color:var(--accent); background:rgba(79,140,255,0.08); }
   ul.archive { list-style:none; }
   ul.archive li { border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
   ul.archive a { display:block; padding:13px 6px; color:var(--fg); text-decoration:none; }
@@ -36,6 +41,11 @@
   <h1>글로벌 브리프</h1>
   <p class="sub">매일 05시 · 12시 · 18시(KST) — 밤사이 뉴스와 미국 증시, 오전·오후 정세와 아시아·유럽 증시를 한 페이지로</p>
   <p class="channel">&#9654; 60초 쇼츠로 보기 — YouTube <a href="https://www.youtube.com/@dailytopicskorea">@dailytopicskorea</a></p>
+
+  <nav class="cats">
+    <a class="on" href="./">글로벌 정세 · 시황</a>
+    <a href="stocks/">종목분석</a>
+  </nav>
 
   <a class="latest" href="briefs/brief-2026-07-06.html">
     <div class="tag">LATEST</div>
